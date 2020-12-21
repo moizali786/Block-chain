@@ -1,2 +1,2 @@
-An Express js Program that takes Multiple Javascript Files and routes them to different webpages.
-Note : Before running The Program make sure to make a sub folder by the name of pages and put all files except third.js in it.
+An Express js Program that takes Multiple EJS Template Files and routes them to different Navigation Panels Descibed in your EJS Template.
+Note : Before running The Program make sure to make a sub folder by the name of Views and inside it make another sub folder by name partials put Head.ejs, Footer.ejs and Header.ejs files inside it. Put Image file and index.ejs and other EJS Template files except ejs.js inside Views Folder.
