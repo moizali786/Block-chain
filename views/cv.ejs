@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h4>Information About Website Owner </h4>
+                <% for (var i = 0; i < mascots.length; i++) { %>
+                        <% if(i == 0 || i == 4 || i == 8 || i == 12){ %>
+                            <u><strong> <%= mascots[i]%></strong> </u>
+                          <% } else{ %>  
+                            <p style="margin-left:2.5em"> <%= mascots[i]  %> </p>
+                         <% } %>
+                <% } %>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>

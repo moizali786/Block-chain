@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h4>Contact Information is Given Below</h4>
+            <ul>
+                    <li>
+                        <strong>Email : <%= email %></strong>
+                    </li>
+                    <li>
+                    <strong>Contact Number : <%= ph_num %></strong>
+                </li>  
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>
