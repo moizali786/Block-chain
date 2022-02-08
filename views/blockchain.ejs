@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h4>Information About All The Blocks in Blockchain </h4>
+	<table class="table table-striped table-bordered table-resizable">
+	  <thead>
+		 <tr>
+            <th >Block</th>
+            <th >Timestamp</th>
+            <th >Nonce</th>
+            <th >Hash</th>
+            <th >Previous Hash</th>
+            <th >Transaction</th>
+		 </tr>
+	  </thead>
+            <% for (var i = 1; i < mascots.length; i++) { %>
+                <tbody>
+                    <tr>
+                <td> <%= i%></td>
+                <td><%= mascots[i].timestamp%></td>
+                <td><%= mascots[i].nonce%></td>
+                <td><%= mascots[i].hash%></td>
+                <td><%= mascots[i].previoushash%></td>
+                <td><%= mascots[i].transactions[0].hash%></td> 
+            </tr>
+        </tbody>  
+             <% } %>
+	</table>
+</div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>

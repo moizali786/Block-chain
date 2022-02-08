@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+        <form   action= "<%= action %>"  method="POST">
+            <fieldset>
+            <h4>Information About Property</h4>
+              <br>
+              <label>Enter CNIC No</label>
+              <input type="tel" id = "cnic" name="cnic" required 
+                  placeholder="42101-4567856-3" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}">
+              <br><br>
+              <button type ="submit">Submit</button>
+              <br><br>
+            </fieldset>
+          </form>
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          <script type ="text/javascript">
+        var user =  "<%= masots4%>"
+          if (user == "true") {
+            swal("Sorry", "Cannot Find Property Information!", "error");
+         }
+          </script>
+     
+            <div id="formElement" style= "<%= disp %>" class="table-box">
+                <h5>Currently Owned Properties</h5>
+                <div class="table-row table-head" style="width: 100%;">
+                    <div class="table-cell first-cell" >
+                        <p>Regitration Number</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>Address</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>Type</p>
+                    </div>
+                </div>
+    
+            <% for (var i = 0; i < masots.length; i++) { %>
+                <% if (masots[i].sr_no !== undefined && masots[i].address !== undefined && masots[i].type !== undefined) { %>
+                <div class="table-row" style="width: 100%;" >
+                    <div class="table-cell first-cell">
+                        <p> <%= masots[i].sr_no%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= masots[i].address%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p>  <%= masots[i].type%></p>
+                    </div>
+                </div>  
+             <% } %>
+             <% } %>
+             <br><br>
+             <h5>Previously Owned Properties</h5>
+             <div class="table-row table-head" style="width: 100%;">
+                <div class="table-cell first-cell" >
+                    <p>Regitration Number</p>
+                </div>
+                <div class="table-cell">
+                    <p>Address</p>
+                </div>
+                <div class="table-cell">
+                    <p>Type</p>
+                </div>
+            </div>
+
+            <% for (var i = 0; i < masots1.length; i++) { %>
+                <% if (masots1[i].sr_no !== undefined && masots1[i].address !== undefined && masots1[i].type !== undefined) { %>
+                <div class="table-row" style="width: 100%;">
+                    <div class="table-cell first-cell">
+                        <p> <%= masots1[i].sr_no%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= masots1[i].address%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p>  <%= masots1[i].type%></p>
+                    </div>
+                </div>  
+             <% } %>
+             <% } %>
+        </div>   
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>

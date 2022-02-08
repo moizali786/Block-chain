@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type ="text/javascript">
+      var user =  "<%= masots5%>"
+        if (user == "true") {
+          swal("Sorry", "There is No Current Block to Display!", "error")
+          .then((willDelete) => {
+    window.location.href = "/";
+});   
+       }
+        </script>
+        <div class="jumbotron">
+            <h1>Real Estate Services Without the Hassle</h1>
+            <img src="unnamed.jpg"    style="width:1045px;height:500px; text-align:justify;">
+            <br>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>

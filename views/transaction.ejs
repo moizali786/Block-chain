@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+        <form   action= "<%= action %>"  method="POST">
+            <fieldset>
+            <h4>Information About Transaction</h4>
+              <br>
+              <label>Enter Hash Of Transaction</label>
+              <input type="text"  style="width: 25%;"  id = "transs" pattern="[A-Za-z0-9]{64}" name="transs" required>
+              <br><br>
+              <button type ="submit" >Submit</button>
+              <br><br>
+            </fieldset>
+          </form>
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          <script type ="text/javascript">
+        var user =  "<%= masots4%>"
+          if (user == "true") {
+            swal("Sorry", "Cannot Find Hash!", "error");
+         }
+          </script>
+            <div id="formElement" style= "<%= disp %>" class="table-box">
+                <div class="table-row table-head" style="width: 100%;">
+                    <div class="table-cell first-cell" >
+                        <p>Names</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>Hashes</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>Information</p>
+                    </div>
+                </div>
+                <div class="table-row" style="width: 100%;" >
+                    <div class="table-cell first-cell">
+                        <p>Seller Data</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= seller%></p>
+                    </div> 
+                    <div class="table-cell">
+                        <p><%= seller_n%></p>
+                    </div> 
+                </div>
+                <div class="table-row" style="width: 100%;">
+                    <div class="table-cell first-cell">
+                        <p>Buyer Data</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= buyer%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= buyer_n%></p>
+                    </div> 
+                </div>
+
+                <div class="table-row" style="width: 100%;" >
+                    <div class="table-cell first-cell">
+                        <p>Real Estate Agent Data</p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= reagent%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= reagent_n%></p>
+                    </div>
+                </div>
+
+                <div class="table-row" style="width: 100%;">
+                    <div class="table-cell first-cell">
+                        <p>Property Verification Officer Data</p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= govt%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= officer_n%></p>
+                    </div>
+                </div>
+                <div class="table-row" style="width: 100%;">
+                    <div class="table-cell first-cell">
+                        <p>Property Data</p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= property%></p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= prop_ad%></p>
+                    </div>
+                </div>
+        </div>   
+
+
+
+        <div id="formElement" style= "<%= disp1 %>" class="table-box">
+            <div class="table-row table-head" style="width: 100%;">
+                <div class="table-cell first-cell" >
+                    <p>Names</p>
+                </div>
+                <div class="table-cell">
+                    <p>Hashes</p>
+                </div>
+                <div class="table-cell">
+                    <p>Information</p>
+                </div>
+            </div>
+            <div class="table-row" style="width: 100%;" >
+                <div class="table-cell first-cell">
+                    <p>Owner Data</p>
+                </div>
+                <div class="table-cell">
+                    <p><%= seller%></p>
+                </div> 
+                <div class="table-cell">
+                    <p><%= seller_n%></p>
+                </div> 
+            </div>
+          
+            <% for (var i = 0; i < masots2.length; i++) { %>
+                    <div class="table-row" style="width: 100%;">
+                        <div class="table-cell first-cell">
+                            <p>Property Data</p>
+                        </div>
+                        <div class="table-cell">
+                            <p> <%= masots2[i]%></p>
+                        </div>
+                        <% if (masots3[i] == undefined || masots3[i] == "Property Not Found") { %>
+                        <div class="table-cell">
+                            <p>Not Found</p>
+                        </div>
+                        <% } else  { %>
+                            <div class="table-cell">
+                                <p>  <%= masots3[i]%></p>
+                            </div>
+                            <% } %>
+                    </div>
+             <% } %>
+    </div> 
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>

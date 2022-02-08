@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <h1>Real Estate Dealings Through Blockchain </h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: 20px;">
+            <ul class="navbar-nav mr-auto">
+              <div class="<%= head1 %>">
+              <li class="nav-item">
+                <a class="nav-link"  href="<%= anchor %>"><%= manheading %></a>
+              </li>
+            </div>
+              <div class="<%= head2 %>">
+              <li class="nav-item">
+                <a class="nav-link" onclick="return confirm('The Data You Have Entered will be Lost.\n Are you sure?')" href="/">Back To Home Page</a>
+              </li>
+            </div>
+            </ul>
+          </nav>
+    </header>
+    <main>
+        <div class="jumbotron">
+                <form method="get" action="/mine">
+                  <h3><%= heading %></h3>
+                  <br>
+                  <div class="<%= type %>">
+                    <button  style="height:40px;width: 300px; font-weight:bold" class="button">Confirm Transaction</button>
+                </div>
+                </form>
+                
+                <div class="wrapper" >
+                  <div>
+                    <div class="<%= type1 %>" style="text-align: center;">
+                      <a href="/notaryofficer"><button style="height:40px;width: 150px; margin-right: 100px; font-weight:bold" id="break-increment">Yes</button></a>
+                      <a href="/verificationofficer"><button style="height:40px;width: 150px; font-weight:bold" id="break-increment">No</button></a>
+                    </div>
+                  </div> 
+                </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+</body>
+</html>

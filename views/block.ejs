@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h4>Information About Current Block in Blockchain </h4>
+            <div class="table-box">
+                <div class="table-row table-head">
+                    <div class="table-cell first-cell">
+                        <p>Names</p>
+                    </div>
+                    <div class="table-cell">
+                        <p>Details</p>
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Index Number</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= index%></p>
+                    </div> 
+                </div>
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Time Stamp</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= mascots%></p>
+                    </div>
+                </div>
+        
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Nonce</p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= nonce%></p>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Transaction Type</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= transactiontype%></p>
+                    </div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Hash</p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= hash%></p>
+                    </div>
+                </div>
+        
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Previous Hash</p>
+                    </div>
+                    <div class="table-cell">
+                        <p> <%= previoushash%></p>
+                    </div>
+                </div>
+        
+                <div class="table-row">
+                    <div class="table-cell first-cell">
+                        <p>Transaction Data</p>
+                    </div>
+                    <div class="table-cell">
+                        <p><%= transaction%></p>
+                    </div>
+                </div>
+        </div>   
+        </div>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+
+</body>
+</html>

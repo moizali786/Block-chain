@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+    <header>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script type ="text/javascript">
+      function validation(){
+        swal({
+  title: "Are you sure?",
+  text: "The Data You Have Entered will be Lost!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    window.location.href = "/";
+  } 
+});
+    }
+    var user =  "<%= masots5%>"
+    if (user == "true") {
+      swal({
+  title: "Sorry",
+  text: "<%= masots6%>",
+  icon: "error",
+});
+    }
+
+      </script>
+        <h1>Real Estate Dealings Through Blockchain </h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: 20px;">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" onclick="return validation()" >Back To Home Page</a>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <main>
+      
+        <div class="jumbotron">
+            <form action= "<%= action %>"  method="POST">
+                <fieldset>
+                  <h3><%= heading %></h3>
+                  <br>
+                  <label>Name</label>
+                  <input type="text" id = "name" name="name"  pattern="[A-Za-z\s]+$"   required>
+                  <br><br>
+                  <label>Address</label>
+                  <input type="text" id = "addres" name="addres"   required>
+                  <br><br>
+                  <label>CNIC No</label>
+                  <input type="tel" id = "cnic" name="cnic" required 
+                  placeholder="42101-4567856-3" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}">
+                  <br><br>
+                  <label>Email</label>
+                  <input type="email" id = "email" name="email"  required>
+                  <br><br>
+                  <label>Phone No</label>
+                  <input type="tel" id = "ph_no" name="ph_no" required 
+                  placeholder="0300-4567856" pattern="[0-9]{4}-[0-9]{7}">
+                  <br><br>
+                  <div class="<%= type %>">
+                    <label>Organization/Departement</label>
+                    <input type ="text" id = 'empID' name="org" pattern="[A-Za-z\s]+$"  <%= required %>>
+                    <br><br>
+                    <label>Designation</label>
+                    <input type ="text" id = 'empID' name="desg" pattern="[A-Za-z\s]+$"   <%= required %>>
+                    <br><br>
+                    <label>Employee ID No</label>
+                    <input type ="text" id = 'empID' name="id"   <%= required %>>
+                    <br><br>
+                </div>
+              <div class="<%= type1 %>">
+                <label>Number of Properties You Want To Register</label>
+           <input type="number" id = "prop_amount" name="prop_amount"   min="1" max="50"  <%= required1 %>>
+           <br><br>
+            </div>
+                  <button type ="submit">Submit</button>
+                  <br><br><br>
+                </fieldset>
+              </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+</body>
+</html>

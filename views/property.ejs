@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+    <header>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="dist/sweetalert.js"></script>
+      <script type ="text/javascript">
+      function validation(){
+        swal({
+  title: "Are you sure?",
+  text: "The Data You Have Entered will be Lost!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    window.location.href = "/";
+  } 
+});
+    }
+      var user =  "<%= masots4%>"
+        if (user == "true") {
+          swal({
+  title: "Thank You",
+  text: "<%= masots6%>",
+  icon: "success",
+})
+  .then((willDelete) => {
+    window.location.href = "/";
+});
+        }
+        else if(user == "fales"){
+          swal({
+  title: "Data Verified",
+  icon: "info",
+  buttons: [true, "Confirm Transfer"],
+  focusConfirm: false,
+  closeOnClickOutside: false,
+  allowOutsideClick : false,
+  allowEscapeKey : false
+})
+.then((isconfirm) => {
+  if(isconfirm){window.location.href = "/mine";}
+})
+}
+
+  
+var user_1 =  "<%= masots5%>"
+    if (user_1 == "true") {
+      swal({
+  title: "Sorry",
+  text: "<%= masots6%>",
+  icon: "error",
+});
+       }
+      </script>
+        <h1>Real Estate Dealings Through Blockchain </h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: 20px;">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" onclick="validation()">Back To Home Page</a>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <main>
+        <div class="jumbotron">
+        </form>
+        <form action="<%= action %>" method="POST" >
+         <fieldset>
+           <h3>Add Details of Property</h3>
+           <br>
+           <label>Type Of Property</label>
+           <label for="house" class = "radio">House
+               <input type="radio" id="house" name="type" value="house" required>
+            </label>
+           <br>
+           <label class = "radio">  Plot
+           <input type="radio" id="plot" name="type" value="plot">
+        </label> 
+            <label class = "radio">Flat 
+            <input type="radio" id="flat" name="type" value="flat"> 
+        </label>
+           <br><br><br>
+           <label>House No</label>
+           <input type="text" id = "hous_no" name="hous_no" pattern="[A-Za-z0-9,'-]+$"    required>
+           <br><br>
+           <label>Project Name</label>
+           <input type="text" id = "proj_name" name="proj_name"  pattern="[A-Za-z0-9\s]+$" required>
+           <br><br>
+           <label>Town</label>
+           <input type="text" id = "town" name="town"   required>
+           <br><br>
+           <label>City</label>
+           <input type="text" id = "city" name="city" pattern="[A-Za-z]+$"  required>
+           <br><br>
+           <label>Size in Square Yards</label>
+           <input type="number" id = "sqyrd" name="sqyrd"  value="500" min="1" required>
+           <br><br>
+           <label>Registration No</label>
+           <input type="text" id = "rg_no" name="rg_no"  required>
+           <br><br>
+           <label>Price</label>
+           <input type="number" id = "price" name="price"   min="1"  required>
+           <br><br>
+           <label>Property Tax Paid Amount</label>
+           <input type="number" id = "gst_amount" name="gst_amount"  min="1"  required>
+           <br><br>
+           <label>Property Tax Paid Date</label>
+           <input type="date" id = "gst_date" name="gst_date" required>
+           <br><br>
+      <div class="<%= type %>">
+           <label>Electricity Bill Paid Amount</label>
+           <input type="number" id = "elec_amount" name="elec_amount"   min="1" >
+           <br><br>
+           <label>Electricity Bill Paid Date</label>
+           <input type="date" id = "elec_date" name="elec_date" >
+           <br><br>
+           <label>Gas Bill Paid Amount</label>
+           <input type="number" id = "gas_amount" name="gas_amount"   min="1"  >
+           <br><br>
+           <label>Gas Bill Paid Date</label>
+           <input type="date" id = "gas_date" name="gas_date" >
+           <br><br>
+           <label>Water Bill Paid Amount</label>
+           <input type="number" id = "water_amount" name="water_amount"  min="1" >
+           <br><br>
+           <label>Water Bill Paid Date</label>
+           <input type="date" id = "water_date" name="water_date">
+           <br><br>
+      </div>
+      <div class="<%= type1 %>">
+        <label>Property Registration Paid Amount</label>
+        <input type="number" id = "reg_amount" name="reg_amount"  min="1"  <%= required1 %>>
+        <br><br>
+        <label>Property Registration Paid Date</label>
+        <input type="date" id = "reg_date" name="reg_date" <%= required1 %>>
+        <br><br>
+    </div>
+           <button type ="submit">Submit</button>
+           <br><br><br>
+         </fieldset>
+        </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+</body>
+</html>
